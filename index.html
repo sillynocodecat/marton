@@ -18,7 +18,7 @@
   <!-- preload only the fonts used above the fold; Shapiro (headings) loads on demand via @font-face -->
   <link rel="preload" href="fonts/Maratype.otf" as="font" type="font/otf" crossorigin>
   <link rel="preload" href="fonts/PPFraktionMono-Bold-BF675904a6c4c6e.otf" as="font" type="font/otf" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=14">
+  <link rel="stylesheet" href="styles.css?v=16">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%23000'/><rect x='3' y='3' width='10' height='10' fill='%23C0FE04'/></svg>">
 </head>
 <body>
@@ -547,33 +547,114 @@
       </div>
     </section>
 
-    <!-- ============ NUCALORIC SUPPLY UNIT — in-world ad break ============ -->
+    <!-- ============ NUCALORIC SPONSOR INTERSTITIAL — in-world vending terminal ============ -->
     <section class="nucal-ad" id="supply" aria-label="NuCaloric ration dispenser — sponsored transmission">
-      <div class="wrap nucal-ad-inner">
-        <div class="nucal-brand">
-          <p class="na-tag">// INCOMING TRANSMISSION — SPONSOR OVERRIDE</p>
-          <h2 class="na-logo">NUCALORIC</h2>
-          <p class="na-sub">AGRI SURVIVAL SYSTEMS // TAU CETI IV</p>
-          <p class="na-slogan">STAY FED<br>OR STAY DEAD</p>
-          <p class="na-blurb">When the colony went dark, NuCaloric kept the lights on in your gut. Field-grade rations engineered for Runners who fully intend to reach exfil. Probably. Complete our contracts. Eat our product. Survive the difference.</p>
+      <span class="na-cut" aria-hidden="true"></span>
+      <div class="fx-crt" aria-hidden="true"></div>
+      <i class="na-tick tl" aria-hidden="true"></i><i class="na-tick tr" aria-hidden="true"></i>
+      <i class="na-tick bl" aria-hidden="true"></i><i class="na-tick br" aria-hidden="true"></i>
+
+      <div class="wrap na-term">
+        <header class="na-head">
+          <p class="na-tag mono"><span class="na-rec" aria-hidden="true"></span>// INCOMING TRANSMISSION — SPONSOR OVERRIDE</p>
+          <h2 class="na-decode mono" data-final="INCOMING TRANSMISSION" aria-hidden="true">INCOMING TRANSMISSION</h2>
+          <p class="na-hud mono" aria-hidden="true">SIGNAL 41% <span class="na-bars">▚▚▚▚</span> // SRC: TAU CETI IV // REC 00:07</p>
+        </header>
+
+        <div class="na-plate-row">
+          <h2 class="na-plate">NUCALORIC</h2>
+          <p class="na-sub mono">AGRI SURVIVAL SYSTEMS // ESSENTIALLY. EVERYWHERE.™</p>
         </div>
-        <div class="nucal-machine">
-          <div class="nm-head"><span>RATION DISPENSER // GAIUS-UNIT</span><span class="nm-count">STOCK <b id="na-idx">01</b> / 06</span></div>
-          <div class="nm-window" id="na-window">
-            <span class="nm-ghost" aria-hidden="true">G</span>
-            <h3 class="nm-name" id="na-name">GREENLOAF</h3>
-            <p class="nm-spec mono" id="na-spec">RESTORES 45 HP // OVER 6S</p>
-            <p class="nm-flavor" id="na-flavor">Compressed marsh algae. Legally classified as food.</p>
+
+        <p class="na-hazard mono">⚠ UNSCHEDULED SPONSOR OVERRIDE — VIEWER DISCRETION IS MANDATORY</p>
+
+        <div class="na-body">
+
+          <!-- COL A — control panel -->
+          <div class="nm-control">
+            <div class="seg-row">
+              <span class="seg-label mono">CREDIT</span>
+              <span class="seg"><span class="seg-ghost" aria-hidden="true">88.88</span><span class="seg-val" id="na-credit">00.00</span></span>
+            </div>
+            <div class="seg-row">
+              <span class="seg-label mono">STOCK</span>
+              <span class="seg"><span class="seg-ghost" aria-hidden="true">88</span><span class="seg-val" id="na-stock">00</span></span>
+            </div>
+
+            <div class="nm-grid" role="group" aria-label="ration selection keypad">
+              <button class="slot" type="button" data-code="A1" data-idx="0"><span class="slot-code">A1</span><em class="slot-qty mono">×03</em></button>
+              <button class="slot" type="button" data-code="A2" data-idx="1"><span class="slot-code">A2</span><em class="slot-qty mono">×05</em></button>
+              <button class="slot" type="button" data-code="A3" data-idx="2"><span class="slot-code">A3</span><em class="slot-qty mono">×02</em></button>
+              <button class="slot is-sold" type="button" data-code="A4" disabled aria-disabled="true"><span class="slot-code">A4</span><em class="slot-qty mono">RATIONED</em></button>
+              <button class="slot" type="button" data-code="B1" data-idx="3"><span class="slot-code">B1</span><em class="slot-qty mono">×01</em></button>
+              <button class="slot" type="button" data-code="B2" data-idx="4"><span class="slot-code">B2</span><em class="slot-qty mono">×04</em></button>
+              <button class="slot" type="button" data-code="B3" data-idx="5"><span class="slot-code">B3</span><em class="slot-qty mono">×03</em></button>
+              <button class="slot is-sold" type="button" data-code="B4" disabled aria-disabled="true"><span class="slot-code">B4</span><em class="slot-qty mono">SOLD OUT</em></button>
+              <button class="slot is-sold" type="button" data-code="C1" disabled aria-disabled="true"><span class="slot-code">C1</span><em class="slot-qty mono">OUT OF ALLOC</em></button>
+              <button class="slot is-sold" type="button" data-code="C2" disabled aria-disabled="true"><span class="slot-code">C2</span><em class="slot-qty mono">RESTOCK PEND</em></button>
+              <button class="slot is-sold" type="button" data-code="C3" disabled aria-disabled="true"><span class="slot-code">C3</span><em class="slot-qty mono">SEE HANDLER</em></button>
+              <button class="slot is-sold" type="button" data-code="C4" disabled aria-disabled="true"><span class="slot-code">C4</span><em class="slot-qty mono">SOLD OUT</em></button>
+            </div>
+
+            <p class="nm-echo mono" aria-hidden="true">SEL ▸ <span id="na-echo">__</span><span class="nm-cur">▮</span></p>
+            <p class="nm-status mono" id="na-status" aria-live="polite" role="status">SELECT ITEM ▸</p>
+            <button class="btn btn-acid nm-vend" id="na-vend" type="button">VEND ▸</button>
           </div>
-          <button class="btn btn-acid nm-btn" id="na-dispense" type="button">DISPENSE RATION →</button>
-          <p class="nm-legal">NuCaloric™ accepts no liability for gastrointestinal anomalies, involuntary rampancy, or death occurring during extraction. Consume before exfil. Not a substitute for a pulse.</p>
+
+          <!-- COL B — readout + ration facts -->
+          <div class="nm-readout">
+            <div class="vfd" id="na-window">
+              <span class="vfd-ghost" aria-hidden="true">▙▟▛▜▙▟▛</span>
+              <h3 class="vfd-name settled" id="na-name" aria-hidden="true">GREENLOAF</h3>
+              <p class="vfd-spec mono" id="na-spec">RESTORES 45 HP // OVER 6S</p>
+              <p class="vfd-flavor" id="na-flavor">Compressed marsh algae. Legally classified as food. Essentially.</p>
+            </div>
+
+            <div class="na-facts" id="na-facts">
+              <p class="rf-banner">RATION FACTS</p>
+              <p class="rf-serv mono">SERVING SIZE 1 UNIT (150 g PASTE-EQUIV) · ALLOCATION 1 OF 1</p>
+              <div class="rf-bar" aria-hidden="true"></div>
+              <p class="rf-cal"><span class="rf-cal-k">CALORIES</span><span class="rf-cal-v mono" id="rf-cal">2000</span></p>
+              <p class="rf-dvhead mono">% DAILY COMPLIANCE*</p>
+              <ul class="rf-rows mono">
+                <li><span class="rf-k">PROTEIN-EQUIV</span><span class="rf-v"><b id="rf-prot">40</b> g</span><span class="rf-dv"><b id="rf-protdv">80</b>%</span></li>
+                <li class="rf-sub"><span class="rf-k">OF WHICH RECLAIMED</span><span class="rf-v"><b id="rf-rec">31</b> g</span><span class="rf-dv">—</span></li>
+                <li><span class="rf-k">WATER (RECYCLED)</span><span class="rf-v"><b id="rf-water">90</b> ml</span><span class="rf-dv"><b id="rf-waterdv">45</b>%</span></li>
+                <li><span class="rf-k">SODIUM</span><span class="rf-v"><b id="rf-sodium">1900</b> mg</span><span class="rf-dv"><b id="rf-soddv">95</b>%</span></li>
+                <li><span class="rf-k">SOMA-STABILIZERS</span><span class="rf-v"><b id="rf-soma">12</b> mg</span><span class="rf-dv"><b id="rf-somadv">100</b>%</span></li>
+                <li><span class="rf-k">MORALE (SIMULATED)</span><span class="rf-v"><b id="rf-morale">3</b> U</span><span class="rf-dv"><b id="rf-moraledv">12</b>%</span></li>
+              </ul>
+              <p class="rf-foot mono">*Percent Daily Compliance based on a 2000&nbsp;kcal survival diet for a single expendable asset. Your requirements will not vary. Consult your handler before ingestion.</p>
+              <span class="rf-stamp mono" id="na-stamp" aria-hidden="true">INSPECTED</span>
+            </div>
+          </div>
+
+          <!-- COL C — receipt rail -->
+          <div class="nm-receipt-rail">
+            <span class="receipt-lip mono" aria-hidden="true">▸ DISPENSE SLOT ◂</span>
+            <div class="na-receipts" id="na-receipts" aria-hidden="true">
+              <p class="na-receipts-empty mono">AWAITING<br>SELECTION</p>
+            </div>
+          </div>
+
         </div>
-      </div>
-      <div class="marquee nucal-marquee" aria-hidden="true">
-        <div class="marquee-track">
-          <span>NUCALORIC&ensp;&ensp;&ensp;STAY FED OR STAY DEAD&ensp;&ensp;&ensp;FEED THE FIGHT&ensp;&ensp;&ensp;NOURISH THE RUNNER&ensp;&ensp;&ensp;</span>
-          <span>NUCALORIC&ensp;&ensp;&ensp;STAY FED OR STAY DEAD&ensp;&ensp;&ensp;FEED THE FIGHT&ensp;&ensp;&ensp;NOURISH THE RUNNER&ensp;&ensp;&ensp;</span>
+
+        <div class="marquee na-marq" aria-label="ration telemetry">
+          <button class="mq-pause mono" type="button" aria-label="pause scrolling text" aria-pressed="false">❚❚</button>
+          <div class="marquee-track">
+            <span>BATCH NC-4471-Δ // FDA-EXEMPT UNDER ORDINANCE 44-C // CONSUME WITHIN 300 SECONDS // DO NOT QUESTION FORMULATION // SERVINGS MAY CONTAIN RECLAIMED ORGANIC MATTER // REPORT NON-COMPLIANCE // 8970-01-449-2093 //&ensp;</span>
+            <span aria-hidden="true">BATCH NC-4471-Δ // FDA-EXEMPT UNDER ORDINANCE 44-C // CONSUME WITHIN 300 SECONDS // DO NOT QUESTION FORMULATION // SERVINGS MAY CONTAIN RECLAIMED ORGANIC MATTER // REPORT NON-COMPLIANCE // 8970-01-449-2093 //&ensp;</span>
+          </div>
         </div>
+        <div class="marquee na-marq na-marq-rev" aria-label="brand slogans">
+          <button class="mq-pause mono" type="button" aria-label="pause scrolling text" aria-pressed="false">❚❚</button>
+          <div class="marquee-track">
+            <span>NOURISHING. INEVITABLE. // ESSENTIALLY. EVERYWHERE. // COMPLETE. COMPLIANT. // FEED THE FIGHT. // HUMANITY THANKS YOU FOR YOUR SACRIFICE. // A NUCALORIC COMPANY SINCE THE GREAT FAMINE. //&ensp;</span>
+            <span aria-hidden="true">NOURISHING. INEVITABLE. // ESSENTIALLY. EVERYWHERE. // COMPLETE. COMPLIANT. // FEED THE FIGHT. // HUMANITY THANKS YOU FOR YOUR SACRIFICE. // A NUCALORIC COMPANY SINCE THE GREAT FAMINE. //&ensp;</span>
+          </div>
+        </div>
+
+        <p class="na-legal mono">NUCALORIC® IS A REGISTERED NUTRIMENT OF NUCALORIC AGRICULTURAL, A PHILANTHROPICALLY MINDED CONSUMER MEGACORP. SERVINGS MAY CONTAIN RECLAIMED ORGANIC MATTER, TRACE PERSONS, OR BOTH. THE COLONY'S ECONOMIC LOSS IS MUNDANE; THE SETBACK TO HUMAN SURVIVAL IS PROFOUND. AVAILABILITY NOT GUARANTEED. CONTENTS MAY VARY. ACCURACY IS NOT GUARANTEED. COMPLIANCE IS MANDATORY UNDER ORDINANCE 44-C. SIDE EFFECTS INCLUDE CONTENTMENT. CONSULT YOUR HANDLER BEFORE INGESTION. ESSENTIALLY. EVERYWHERE.™</p>
       </div>
     </section>
 
@@ -614,6 +695,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=13"></script>
+  <script src="script.js?v=17"></script>
 </body>
 </html>
